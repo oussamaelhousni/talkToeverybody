@@ -14,7 +14,10 @@ app.use(cors({
 }))
 app.use(express.static(__dirname + "/public"));
 const expressServer = app.listen(4001);
-const io = socket(expressServer);
+const io = socket(expressServer,{cors: {
+  origin: "*",
+  methods: ["GET", "POST"]
+}});
 // connect to mongoDB
 const uri = "mongodb+srv://oussama:oussama@cluster0.lkejb.mongodb.net/?retryWrites=true&w=majority";
 

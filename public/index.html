@@ -78,7 +78,7 @@
         messages.insertBefore(message, messages.firstChild);
       };
 
-      const socket = io("http://localhost:4001");
+      const socket = io();
 
       // check for connection
       if (socket !== undefined) {
